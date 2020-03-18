@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulaire</title>
+	<script type="text/javascript">
+		class Person{
+	    	constructor(name, lastName, birthday, age, profession,image ){
+		        this.name = name;
+		        this.lastName = lastName;
+		        this.birthday = birthday;
+		        this.age = age;
+                this.profession = profession;
+                this.image = image;
+		      
+		    }
+		}
+
+		function addRow(){
+		    let row = "<tr>";
+		    let person = new Person(
+		        document.getElementById("name").value,
+		        document.getElementById("lastName").value,
+		        document.getElementById("birthday").value,
+		        document.getElementById("age").value,
+                document.getElementById("profession").value, 
+                document.getElementById("image").value,        
+		    )
+		    row += "<td>"+person.name+"</td>";
+		    row += "<td>"+person.lastName+"</td>";
+		    row += "<td>"+person.birthday+"</td>";
+		    row += "<td>"+person.age+"</td>";
+            row += "<td>"+person.profession+"</td>";
+            row += "<td>"+person.image+"</td>";
+            row += "</tr>";
+		    document.getElementById("tabl2").innerHTML += row;
+
+		    // Persons.push(person);
+		    // for(let i = 0; i < Persons.length; i++){
+		    //     console.log(Persons[i]);
+		    // }
+        }
+        
+	</script>
+</head>
+<body>
+	<center>
+		<form name="form"></form>
+			<table id="table">
+				<tr>
+					<td>
+						<label>nom :</label>
+					</td>
+					<td>
+						<input type="text" id="name" name="n_nom">
+					</td>
+					<td>
+						<label>prénom :</label>
+					</td>
+					<td>
+						<input type="text" id="lastName" name="n_prenom">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>date de naissance :</label>
+					</td>
+					<td>
+						<input type="text" id="birthday" name="n_date">
+					</td>
+					<td>
+						<label>age :</label>
+					</td>
+					<td>
+						<input type="text" id="age" name="votre age">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>profession :</label>
+					</td>
+					<td>
+                        <input type="text" id="profession" name="profession">
+					</td>
+                </tr>
+                <tr>
+					<td>
+						<label>image :</label>
+					</td>
+					<td>
+                        <input type="file" id="image" name="image">
+					</td>
+				</tr>
+				<!-- <input type="button" id="btn" value="ajouter" onclick="addRow()"> -->
+			</table>
+			<center>
+				<input type="button" id="btn" value="ajouter" onclick="addRow()">
+			</center>
+		</form>
+	</center>
+	<center>
+		<table id="tabl2">
+			<tr>
+				<td>nom</td>
+				<td>prénom</td>
+				<td>date de naissance</td>
+				<td>votre age</td>
+                <td>profession</td>
+                <td>image</td>
+	
+
+			</tr>
+		</table>
+	</center>
+</body>
+</html>
